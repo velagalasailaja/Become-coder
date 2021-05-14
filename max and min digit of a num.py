@@ -18,3 +18,17 @@ while n:
     if r<s:
         s=r
 print(s,l)
+
+''' or'''
+n=int(input())
+min=n%10
+max=n%10
+while n:
+    r=n%10
+    n=n//10
+    if r>max:
+        max=r
+    if r<min:
+        min=r
+print(s,l
+    
