@@ -7,30 +7,19 @@ def reverse(n):
     return rev
 def find_smin(n,data):
     mi=min(data)
-    data[data.index(mi)]=reverse(mi)
-    for i in data:
-        if i<reverse(mi):
-            res=0
-        else:
-            res=1
-    if res==1:
-        return 'supermin'
-    else:
-        return 'Notsupermin'
-def find_smax(n,data):
-    ma=min(data)
-    data[data.index(ma)]=reverse(ma)
-    for i in data:
-        if i>reverse(ma):
-            res=0
-        else:
-            res=1
-    if res==1:
-        return 'supermax'
-    else:
-        return 'Notsupermax'   
+    r=reverse(mi)
+    data[data.index(mi)]=r
+    mi1=min(data)
+    return r==mi1   
+def find_smax(n,temp):
+    ma=max(temp)
+    r=reverse(ma)
+    temp[temp.index(ma)]=r
+    ma1=max(temp)
+    return r==ma1    
 n=int(input())
 data=list(map(int,input().split()))
+temp=data.copy()
 smin=find_smin(n,data)
-smax=find_smax(n,data)
+smax=find_smax(n,temp)
 print(smin,smax)
